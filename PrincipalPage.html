@@ -1,0 +1,76 @@
+<!-- HTML5--v2 -->
+
+<!--Princpial page (html Css) Done by Guillermo, pricipal page javascript done by Alvaro -->
+<!--individual city javascript done by guillermo and css and html done by alvaro-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>How far away am I from...</title>
+
+    <script type="text/javascript" src="js--v2"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+    <link rel="stylesheet" type="text/css" href="Css--v2.css">
+   <h1>Earths diameter is 12.742 km, but... <br>Do you know how far you are from your friends around the world?!</h1>
+    <div class="sticky">
+  <h2>To know how far away you are from a City and its current time, drag the city to <id style="color: #FFA800;">you!</id></h2>
+  <div class="me-container" id="sticky2" style="margin-top: -5px;">
+    <div class="hour"><div id="reloj"></div></div>
+    <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+  </div>
+</div>
+    
+
+  </head>
+
+  <body>
+
+    <div class="grid-container" style="margin-top: 100px;">
+      <div class="one" draggable="true" ondragstart="dragShan(event)">Shanghai</div>
+      <div class="two" draggable="true" ondragstart="dragCop(event)">Copenhagen</div>
+      <div class="three" draggable="true" ondragstart="dragMad(event)">Madrid</div>
+      <div class="four" draggable="true" ondragstart="dragNY(event)">New York</div>
+      <div class="one2" draggable="true" ondragstart="dragLon(event)">London</div>
+      <div class="two2" draggable="true" ondragstart="dragPar(event)">Paris</div>
+      <div class="three2" draggable="true" ondragstart="dragAle(event)">Alexandria</div>
+      <div class="four2" draggable="true" ondragstart="dragBer(event)">Berlin</div>
+      <div class="one3" draggable="true" ondragstart="dragGiz(event)">Giza</div>
+      <div class="two3" draggable="true" ondragstart="dragCT(event)">Cape Town</div>
+      <div class="three3" draggable="true" ondragstart="dragBar(event)">Barcelona</div>
+      <div class="four3" draggable="true" ondragstart="dragLA(event)">Los Angeles</div>
+    </div>
+    
+    <p id="demo"></p>
+    
+    <script>
+     
+      
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else { 
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+    
+        function showPosition(position) {
+          document.getElementById("demo").innerHTML = "<h3><br><br>Current location:</h3><br>Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude +"<br><br><br><br>";
+      }
+    </script>
+
+    <!--   enceder el mapa     -->
+    <input id="ocultar-mapa" type="checkbox">
+    <label for="ocultar-mapa" style="vertical-align: middle;">Hide my ubication</label>
+
+    <article id="mapa">
+    </article>
+    <div id="posicion"></div>
+    
+  </body>
+
+</html>

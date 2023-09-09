@@ -1,0 +1,202 @@
+/* CSS */
+h1{
+  margin-top: 50px;
+  text-align: center;
+}
+body {
+   background-color: #666;
+   font-family: sans-serif;
+   margin: 20px;
+}
+p.firstp{
+  margin-top: 30px;
+}
+h2 {
+  width: 98%;
+  padding: 12px 16px;
+  background: rgb(55, 54, 54);
+  border-radius: 10px;
+  color: #f1f1f1;
+  height: 50px;
+  line-height: 53px;
+  text-shadow: 2px 2px 2px black;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5px;
+    text-align: center;
+  }
+
+/*******  Containers  *******/
+
+.grid-container {
+   margin-top: -20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+    background-color: #000;
+    border: 2px solid #FFA800;
+    box-shadow: 0 0 4px #FFA800;
+    padding: 5px;
+    border-radius: 15px;
+    grid-template-rows: 200px 200px 200px;
+  }
+  
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 200px;
+    padding: 20px 0;
+    font-size: 30px;
+    border-radius: 15px;
+    transition: 0.5s;
+    cursor: move; 
+  }
+
+ .me-container {
+   margin-left: 20%;
+   width:70%;
+   text-align: center;
+   display: grid;
+   grid-template-columns: auto auto ;
+   grid-template-rows: auto;
+   border-radius: 10px;
+   gap: 10px;
+  }
+
+  
+   .box {
+    border: 3px solid #666;    
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    margin-right: auto;
+    background-image:url("YouImage.png");
+    background-position: center;
+    background-size: cover;
+    border: 2px solid #FFA800;
+    box-shadow: 0 0 4px #FFA800;
+
+  }
+
+  .hour {
+    border: 3px solid #666;    
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    width: 300px;
+    height: 60px;
+    line-height: 53px;
+    font-size: 200%;
+  }
+
+
+/*******  Hover  *******/
+
+
+.one:hover {
+    background-image: url("BackgroundImage/FotoShanghai.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.two:hover {
+    background-image: url("BackgroundImage/FotoCopenhagen.webp");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.three:hover {
+    background-image: url("BackgroundImage/FotoMadrid.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.four:hover {
+    background-image: url("BackgroundImage/FotoNY.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.one2:hover {
+    background-image: url("BackgroundImage/FotoLondon.jpg");
+    background-size: cover;
+    line-height: 10px;
+   }
+
+  .two2:hover {
+    background-image: url("BackgroundImage/FotoParis.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.three2:hover {
+    background-image: url("BackgroundImage/FotoAlexandria.webp");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.four2:hover {
+    background-image: url("BackgroundImage/FotoBerlin.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+.one3:hover {
+    background-image: url("BackgroundImage/FotoEgipto.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.two3:hover {
+    background-image: url("BackgroundImage/FotoCapeT.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.three3:hover {
+    background-image: url("BackgroundImage/FotoBarcelona.webp");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+.four3:hover {
+    background-image: url("BackgroundImage/FotoLA.jpg");
+    background-size: cover;
+    line-height: 10px;
+  }
+
+ /******** MAP  ********/
+
+ article {
+   position: relative;
+   overflow: hidden;
+   padding: 20px;
+   background: rgba(0,0,0,0.7);
+   margin: 50px auto;
+   width: 50%;
+   border: 2px solid #FFA800;
+   border-radius: 10px;
+   box-shadow: 0 0 4px #FFA800;
+   color: #FFA800;
+   text-align: center;
+ }
+ 
+ #mapa {
+   height: 300px;
+   padding: 0;
+   margin-bottom: 20px;
+  }
+
+ #ocultar-mapa:checked ~ #mapa {
+   display: none;
+  }
+
+button{
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+ }

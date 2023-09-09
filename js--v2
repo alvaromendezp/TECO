@@ -1,0 +1,137 @@
+
+window.addEventListener("load",begin,false);
+function begin(){
+  setInterval(muestraReloj, 1000);
+  getLocation()
+}
+
+//google map
+var mapa = null;
+var mapaMarcador = null;  
+
+if (navigator.geolocation) {
+  navigator.geolocation.watchPosition(mostrarPosicion, mostrarErrores, opciones); 
+} else {
+  alert("Tu navegador no soporta la geolocalización, actualiza tu navegador.");
+}
+
+function mostrarPosicion(posicion) {
+  var latitud = posicion.coords.latitude;
+  var longitud = posicion.coords.longitude;
+  var miPosicion = new google.maps.LatLng(latitud, longitud);
+
+  // Se comprueba si el mapa se ha cargado ya 
+  if (mapa == null) {
+    // Crea el mapa y lo pone en el elemento del DOM con ID mapa
+    var configuracion = {center: miPosicion, zoom: 16, mapTypeId: google.maps.MapTypeId.HYBRID};
+    mapa = new google.maps.Map(document.getElementById("mapa"), configuracion);
+
+    // Crea el marcador en la posicion actual
+    mapaMarcador = new google.maps.Marker({position: miPosicion, title:"Esta es tu posición"});
+    mapaMarcador.setMap(mapa);
+  } else {
+    // Centra el mapa en la posicion actual
+    mapa.panTo(miPosicion);
+    // Pone el marcador para indicar la posicion
+    mapaMarcador.setPosition(miPosicion);
+  }
+}
+
+function mostrarErrores(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+        alert('Permiso denegado por el usuario'); 
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert('Posición no disponible');
+        break; 
+      case error.TIMEOUT:
+          alert('Tiempo de espera agotado');
+          break;
+        default:
+          alert('Error de Geolocalización desconocido :' + error.code);
+  }
+}
+
+var opciones = {
+  enableHighAccuracy: true,
+  timeout: 10000,
+  maximumAge: 1000
+}
+
+/**** DRAG DROP  ****/
+function allowDrop(ev)
+{
+    ev.preventDefault();
+}
+
+function drop(ev)
+{
+    ev.preventDefault();
+    window.location=ev.dataTransfer.getData("Url");
+}
+
+function dragShan(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/ShanghaiPage.html");
+}
+
+function dragCop(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/CopenhagenPage.html");
+}
+function dragMad(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/MadridPage.html");
+}
+function dragNY(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/NYPage.html");
+}
+function dragLon(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/LondonPage.html");
+}
+function dragPar(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/ParisPage.html");
+}
+function dragAle(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/AlexandriaPage.html");
+}
+function dragBer(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/BerlinPage.html");
+}
+function dragGiz(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/GizaPage.html");
+}
+function dragCT(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/CapeTownPage.html");
+}
+function dragBar(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/BarcelonaPage.html");
+}
+function dragLA(ev)
+{
+    ev.dataTransfer.setData("Url","CityPage/LAPage.html");
+}
+
+//reloj
+
+function muestraReloj() {
+  var fechaHora = new Date();
+  var horas = fechaHora.getHours();
+  var minutos = fechaHora.getMinutes();
+  var segundos = fechaHora.getSeconds();
+
+  if(horas < 10) { horas = '0' + horas; }
+  if(minutos < 10) { minutos = '0' + minutos; }
+  if(segundos < 10) { segundos = '0' + segundos; }
+
+  document.getElementById("reloj").innerHTML = horas+':'+minutos+':'+segundos;
+}
